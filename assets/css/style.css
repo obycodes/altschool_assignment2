@@ -1,0 +1,209 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    padding-top: 4rem;
+    margin: 0;
+}
+
+.ios-status-bar-black {
+    display: none;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.branding {
+    flex-basis: 460px; 
+    height: 275px;
+    margin: 1rem;
+    padding: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.branding h1 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.branding p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    width: 268px;
+    height: 50px;
+}
+
+.logo {
+    max-width: 50px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.form-container {
+    flex-grow: 1;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.registration-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.form-container input,
+.form-container select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-container button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.form-container button:hover {
+    background-color: #43a047;
+}
+
+.agreement {
+    font-size: 0.8rem;
+    color: #666;
+    text-align: center;
+    grid-column: 1 / -1;
+}
+
+/* Responsive adjustments */
+/* Media query for tablets */
+@media screen and (max-width: 768px) {
+    .registration-form {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group, .full-width {
+        grid-column: 1 / -1;
+    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .branding, .form-container {
+        max-width: 100%;
+        flex-basis: auto;
+    }
+
+    .ios-status-bar-black {
+        display: block;
+        background-color: #fff;
+        color: #000;
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .ios-status-bar-black .container {
+        display: flex;
+        align-items: center;
+    }
+}
+
+/* Media query for mobile phones */
+@media screen and (max-width: 480px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+        padding-top: 0;
+        padding-bottom: 0.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin: 0;
+    }
+    .branding, .form-container {
+        flex-basis: auto;
+        max-width: 100%;
+    }
+
+    .branding {
+        text-align: left;
+        padding-top: 0;
+        padding-bottom: 0.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin: 0;
+    }
+
+    #brandingText::after {
+        content: 'Inspiring wholesome harmony for the mind, body and spirit, for everyone, everywhere.';
+    }
+    .branding h1 {
+        font-size: 1.2rem; /* Smaller font size for mobile */
+    }
+
+    .branding p {
+        font-size: 0.9rem; /* Smaller font size for mobile */
+        font-family: "Brown-light", Helvetica;
+        font-weight: 300;
+        letter-spacing: 0;
+        line-height: 1.563rem;
+        color: grey;
+    }
+
+    .form-container {
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .registration-form {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
+    .full-width {
+        grid-column: 1 / 2;
+    }
+}
